@@ -1,4 +1,4 @@
-package pages;
+package com.cybertek.pages;
 
 public class LoginPage {
 }

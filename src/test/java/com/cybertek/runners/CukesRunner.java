@@ -1,4 +1,4 @@
-package runners;
+package com.cybertek.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
                 "rerun:target/rerun.txt"
         },
-        features = "src/test/resources/features",
+        features = "src/test/resources",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
         tags = ""

@@ -3,7 +3,10 @@ package com.cybertek.step_definitions;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.xpath.operations.String;
+import org.junit.Assert;
 
 public class LoginStepDef {
 
@@ -26,4 +29,11 @@ public class LoginStepDef {
         loginPage.loginButton.click();
     }
 
+    @Then("dashboard should be displayed")
+    public void dashboard_should_be_displayed() {
+        String expected = "(46) Portal";
+        String actual = Driver.getDriver().getTitle();
+
+        Assert.assertEquals("FAIL!",expected,actual);
+    }
 }

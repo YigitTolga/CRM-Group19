@@ -7,4 +7,5 @@ Background:
     Given I am on login page
     When I enter valid "helpdesk37@cybertekschool.com" and "UserUser"
     And  I click login button
+    Then dashboard should be displayed
 

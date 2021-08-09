@@ -1,9 +1,10 @@
 Feature: Login Functionality
-  User story : As a user, I should be able to log
-  work hours with time reporting
-  @wip1
-  Scenario: 1. users (helpdesk) login with valid credentials
+  User story : As a user, I should be able to log work hours with time reporting
+
+
+  Scenario: Users (helpdesk) login with valid credentials
     Given user am on login page
-    When user enter valid "username" and "password" and click login button
-    Then user should land home page
+    When user enter valid "username" and "password"
+    And  user click login button
+    Then dashboard should be displayed
 

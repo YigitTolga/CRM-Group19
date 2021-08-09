@@ -6,31 +6,37 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.xpath.operations.String;
 import org.junit.Assert;
 
-public class LoginStepDef {
+public class LoginStepDefinition {
 
     LoginPage loginPage = new LoginPage();
 
-
     @Given("user am on login page")
     public void i_am_on_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        String url = ConfigurationReader.getProperty("url");
+        Driver.getDriver().get(url);
     }
-    @When("user enter valid {string} and {string} and click login button")
+    @When("user enter valid {string} and {string}")
     public void i_enter_valid_and(String username, String password) {
         username = ConfigurationReader.getProperty("username");
         loginPage.inputUsername.sendKeys(username);
         password = ConfigurationReader.getProperty("password");
         loginPage.inputPassword.sendKeys(password);
-        loginPage.loginButton.click();
     }
+    @When("user click login button")
+    public void i_click_login_button() {
+        loginPage.signInButton.click();
 
-    @Then("user should land home page")
+    }
+    @Then("dashboard should be displayed")
     public void dashboard_should_be_displayed() {
         String expected = "(46) Portal";
         String actual = Driver.getDriver().getTitle();
 
         Assert.assertEquals("FAIL!",expected,actual);
     }
+
+
 }

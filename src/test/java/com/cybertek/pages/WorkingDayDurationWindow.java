@@ -26,4 +26,10 @@ public class WorkingDayDurationWindow {
     public WebElement reason;
     @FindBy (id = "Save")
     public WebElement save;
+    @FindBy (xpath = "(//span[@class='bxc-am-pm'])[1]")
+    public WebElement startAmPm;
+    @FindBy (xpath = "(//span[@class='bxc-am-pm'])[2]")
+    public WebElement endAmPm;
+    @FindBy (xpath = "(//span[@style='display: block;'])[1]")
+    public WebElement displayClock;
 }

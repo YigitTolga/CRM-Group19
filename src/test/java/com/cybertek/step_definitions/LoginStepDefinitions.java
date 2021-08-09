@@ -6,7 +6,6 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.xpath.operations.String;
 import org.junit.Assert;
 
 public class LoginStepDefinitions {
@@ -14,14 +13,14 @@ public class LoginStepDefinitions {
 
     @Given("user am on login page")
     public void i_am_on_login_page() {
-        String url = ConfigurationReader.getProperty("crm_url");
+        String url = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(url);
     }
     @When("user enter valid {string} and {string}")
     public void i_enter_valid_and(String username, String password) {
-        username = ConfigurationReader.getProperty("nb37_user");
+        username = ConfigurationReader.getProperty("username");
         loginPage.inputUsername.sendKeys(username);
-        password = ConfigurationReader.getProperty("nb37_password");
+        password = ConfigurationReader.getProperty("password");
         loginPage.inputPassword.sendKeys(password);
     }
     @When("user click login button")

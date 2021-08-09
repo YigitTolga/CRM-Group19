@@ -4,7 +4,6 @@ import com.cybertek.pages.EventPage;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.xpath.operations.String;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

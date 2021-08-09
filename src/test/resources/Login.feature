@@ -4,7 +4,7 @@ Feature: Login Functionality
 
   Scenario: Users (helpdesk) login with valid credentials
     Given user am on login page
-    When user enter valid "nb37_user" and "nb37_password"
+    When user enter valid "username" and "password"
     And  user click login button
     Then dashboard should be displayed
 

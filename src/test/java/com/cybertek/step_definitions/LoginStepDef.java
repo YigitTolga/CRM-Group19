@@ -15,8 +15,8 @@ public class LoginStepDefinition {
 
     @Given("user am on login page")
     public void i_am_on_login_page() {
-        String url = ConfigurationReader.getProperty("url");
-        Driver.getDriver().get(url);
+        String nextBaseURL = ConfigurationReader.getProperty("url");
+        Driver.getDriver().get(nextBaseURL);
     }
     @When("user enter valid {string} and {string}")
     public void i_enter_valid_and(String username, String password) {

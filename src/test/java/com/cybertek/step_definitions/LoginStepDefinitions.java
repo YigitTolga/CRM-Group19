@@ -1,6 +1,7 @@
 package com.cybertek.step_definitions;
 
 import com.cybertek.pages.LoginPage;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -19,7 +20,9 @@ public class LoginStepDefinitions {
     @When("user enter valid {string} and {string}")
     public void i_enter_valid_and(String username, String password) {
         username = ConfigurationReader.getProperty("username");
+        BrowserUtils.sleep(2);
         loginPage.inputUsername.sendKeys(username);
+        BrowserUtils.sleep(2);
         password = ConfigurationReader.getProperty("password");
         loginPage.inputPassword.sendKeys(password);
     }

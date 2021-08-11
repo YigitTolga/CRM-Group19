@@ -20,6 +20,6 @@ public class ClockOutPage {
     @FindBy(xpath = "//*[@class='webform-small-button-text']")
     public WebElement clockOutButton;
 
-    @FindBy(xpath = "//span[@id='timeman-status']")
+    @FindBy(xpath = "//span[@id='timeman-status-block']/span") ////*[@id='timeman-status-block']  //span[@id='timeman-status']
     public WebElement expectedTitle;
 }

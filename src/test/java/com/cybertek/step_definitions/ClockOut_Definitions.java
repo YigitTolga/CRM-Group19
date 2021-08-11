@@ -17,11 +17,13 @@ public class ClockOut_Definitions {
    }
     @Then("user clicks on continue working day button")
     public void user_clicks_on_continue_working_day_button() throws InterruptedException {
+        BrowserUtils.sleep(2);
         clockOutPage.continueWorkingDay.click();
 
     }
     @Then("user clicks on clock out button")
     public void user_clicks_on_clock_out_button() throws InterruptedException {
+        BrowserUtils.sleep(2);
        clockOutPage.clockOutButton.click();
 
     }
@@ -31,7 +33,8 @@ public class ClockOut_Definitions {
 
         String actualResult = clockOutPage.expectedTitle.getText();
 
-        String expectedResult = "Clocked out";
+        String expectedResult = "CLOCKED OUT";
+
         BrowserUtils.sleep(2);
         Assert.assertEquals(actualResult,expectedResult);
 
